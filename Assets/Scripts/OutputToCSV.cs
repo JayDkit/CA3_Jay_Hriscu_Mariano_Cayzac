@@ -28,7 +28,6 @@ public class OutputToCSV : MonoBehaviour
 
     public void WriteCSV()
     {
-        Debug.Log("BBBBBBBBBBBBBB");
         string dateTime = DateTime.Now.Day.ToString() 
             + "-" + DateTime.Now.Month.ToString() 
             + "-" + DateTime.Now.Year.ToString() 

@@ -1,17 +1,21 @@
 using UnityEngine;
 
-public class ForceManager : MonoBehaviour
+public class ForceManager : MonoBehaviour //Have button example that fill fields with deafult values;
 {
     ObjectData obj;
+    FluidData fluid;
 
     private const float g = 9.81f;      //Gravity
     private Vector3 forceGravity = Vector3.zero;
+    float d;
+
+
 
     private void Start()
     {
         obj = GameObject.Find("Sphere").GetComponent<ObjectData>();
         forceGravity = new Vector3(0, (-obj.m * g), 0);
-
+        d = (Mathf.PI/2) * fluid.fluidDensity * (obj.r * obj .r);
     }
 
     private float nextActionTime = 0.0f;
@@ -25,5 +29,13 @@ public class ForceManager : MonoBehaviour
             obj.UpdatePosition();
         }
     }
+
+    
+
+    private Vector3 dragForce()
+    {
+        // return -d * fluid.dragCoefficient;
+        return new Vector3();
+    } 
 
 }
